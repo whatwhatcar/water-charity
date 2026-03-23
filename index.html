@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ok</title>
+    <link rel="stylesheet" href="styles/reset.css">
+
+    <link rel="stylesheet" href="styles/board.css">
+    <link rel="stylesheet" href="styles/cells.css">
+
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/end.css">
+
+</head>
+
+<body>
+    <main>
+
+        <img src="icons/logo.avif">
+
+
+        <div class="game-container">
+
+
+            <!-- Top bar -->
+
+            <div class="top-bar">
+                <div class="stats">
+
+                    <!-- Best -->
+                    <div class="stat-chip" id="best">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                            <path d="M4 22h16" />
+                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                        </svg>
+                        <div>
+                            <div class="stat-label">Best</div>
+                            <div class="stat-value" id="best-val">—</div>
+                        </div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="stat-chip" id="time">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <div>
+                            <div class="stat-label">Time</div>
+                            <div class="stat-value" id="time-val">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Flags -->
+                    <div class="stat-chip" id="flag">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                            <line x1="4" x2="4" y1="22" y2="15" />
+                        </svg>
+                        <div>
+                            <div class="stat-label">Flags</div>
+                            <div class="stat-value" id="flag-val">10</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="actions">
+                    <button class="icon-btn" id="redo" title="Restart">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                            <path d="M3 3v5h5" />
+                        </svg>
+                    </button>
+                    <button class="icon-btn" id="menu" title="Menu">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" x2="20" y1="6" y2="6" />
+                            <line x1="4" x2="20" y1="12" y2="12" />
+                            <line x1="4" x2="20" y1="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Board -->
+
+            <div id="board-container"></div>
+
+        </div>
+
+        <div id="end-screen">
+            <div class="shadow"></div>
+            <div class="end-popup">
+                <h1 id="end-message">you win/lose</h1>
+                <div class="time-container">
+                    <div id="best-time"></div>
+                    <div id="your-time"></div>
+                </div>
+                <button id="restart"></button>
+            </div>
+        </div>
+
+        <div id="menu-container">
+            <div class="shadow"></div>
+            <div class="menu-popup">
+                <button id="close"><img src="icons/close.svg"></button>
+
+                <div class="nav-buttons">
+                    <button id="back" type="button"><img src="icons/back.svg"></button>
+                    <button id="next" type="button"><img src="icons/next.svg"></button>
+                </div>
+
+                <div class="start-container">
+                    <button id="start" type="button">start</button>
+                </div>
+
+                <div class="about-container">
+                    <button id="info" type="button"><img src="icons/info.svg"></button>
+                    <button id="help" type="button"><img src="icons/help.svg"></button>
+                </div>
+
+                <div class="dots"></div>
+
+                <div class="pages">
+                    <!-- Info pages -->
+                    <div class="info-pages">
+                        <div class="page">
+                            <h3>Why?</h3>
+                            <div>I made this game to eduate others on the potential dangers of deep sea underwater
+                                mines, as they pose a harmful threat to aquamarine life, if these mines still linger
+                                many more unfortunate animals will suffer a miserable fate. These mines cause
+                                destruction to entire ecosystems that dwells beneath the waters, not only that but they
+                                cause
+                                pollution from the harmful toxins and chemicals that leach out into the ocean.</div>
+                        </div>
+                        <div class="page">
+                            <h3>Ocean Fun Facts</h3>
+                            <ul>
+                                <li>• Did you know that the ocean voers 71% of Earth's surface, which contains 97% of
+                                    its waters and produces over half of the world's oxygen?</li>
+                                <li>• The Mariana Trench is nearly 7 miles deeper than tallest mountain in the world,
+                                    Mount Everst. </li>
+                                <li>• The Great Barrier Reef is the largest living underwater structure on earth and can
+                                    be seen from the moon</li>
+                                <li>• There has been 20 million tons of gold dispersed throughout the ocean water.</li>
+                                <li>• There are more artifcats under the sea than in all world's museums combined, with
+                                    an estimated 3 million shipwrecks.</li>
+                            </ul>
+                        </div>
+                        <div class="page">Info Page 3</div>
+                    </div>
+
+                    <!-- Help pages -->
+                    <div class="help-pages">
+                        <div class="page">
+                            <h3>Menu Navigation</h3>
+                            <div><img src="icons/menu.svg"> To get back to this menu during mid game click on the menu
+                                button. </div>
+                            <div><img src="icons/close.svg"> Click on this icon near the top right to close this menu.
+                            </div>
+                            <div><img src="icons/back.svg"> <img src="icons/next.svg"> Use the left and right arrows
+                                near
+                                the bottom to nagivate forwards or backwards. </div>
+                            <div><img src="icons/info.svg"> Click on this icon to show information and fun facts.</div>
+                            <div><img src="icons/help.svg"> Click on this to show help about any questions of the game.
+                            </div>
+                        </div>
+
+                        <div class="page">
+                            <h3>Game Interface</h3>
+                            <div><img src="icons/dropdown.svg"> To select the difficulty click on the drop down menu
+                                from a list of options, easy, medium, and hard.
+                            </div>
+                            <div><img src="icons/clock.svg"> This icon shows you your current time during the round.
+                            </div>
+                            <div><img src="icons/flag.svg"> This icon indicates how many squares you have flagged to be
+                                mines.</div>
+                            <div><img src="icons/redo.svg"> If you ever want to retry then click this icon to reset the
+                                game.</div>
+                            <div><img src="icons/trophy.svg"> This shows your fastest time and try to beat your best
+                                score.</div>
+                        </div>
+
+                        <div class="page">
+                            <h3>Game Tutorial</h3>
+                            <div><img src="icons/controller.svg">Only mouse is needed to play this game, no need to use
+                                arrow keys or wasd.</div>
+                            <div><img src="icons/click.svg"> Left click to reveal squares</div>
+                            <div><img src="icons/mouse.svg"> Right click to mark squares that potentially mines</div>
+                            <div><img src="icons/bomb.svg"> Beware of mines, do not accidently click on one or else you
+                                will lose</div>
+                            <di><img src="icons/grid.svg"> To begin, left click on any square on the grid.</di>
+                            <di><img src="icons/number.svg"> The total number on a given square indicates how many mines
+                                that are vertical, horizontal, and diagonal neighboring it.
+                        </div>
+
+                        <div class="page">
+                            <h3>Game Objective</h3>
+                            <div>Your goal is to complete the board without clicking on a mine, you are supposed to be
+                                fast but becareful not to carelessly click on a mine or all of your progress will be
+                                lost. You must get the fastest time possible if you want to save the environment
+                                otherwise world's demise will faulter within your grasp. Do not mess up as we are
+                                relying on you savior to protect the future of our planet for generations to come</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+    <script type="module" src="scripts/menu.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+
+</html>
