@@ -1,0 +1,97 @@
+:root {
+    --n1: #0000ff;
+    --n2: #008200;
+    --n3: #ff0000;
+    --n4: #000084;
+    --n5: #840000;
+    --n6: #008284;
+    --n7: #840084;
+    --n8: #000000;
+
+    --cell-bg: #e5e7eb;
+    --cell-hidden-bg: #9ca3af;
+    --cell-border: #6b7280;
+    --cell-hover: #d1d5db;
+}
+
+.cell {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 2rem;
+
+    user-select: none;
+    cursor: pointer;
+
+    border: 1px solid var(--cell-border);
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.cell.hidden {
+    background: var(--cell-hidden-bg);
+}
+
+/* Revealed cells */
+.cell.revealed {
+    background: var(--cell-bg);
+}
+
+
+.cell.hidden:hover {
+    background: var(--cell-hover);
+}
+
+/* Show number */
+.cell.revealed::before {
+    content: attr(data-n);
+}
+
+/* Hide zero */
+.cell.revealed[data-n="0"]::before {
+    content: "";
+}
+
+/* flagged cells */
+.cell.flagged::before {
+    content: "🚩";
+}
+
+.cell.flagged {
+    background: var(--cell-hidden-bg);
+}
+
+/* Colors */
+[data-n="1"] {
+    color: var(--n1);
+}
+
+[data-n="2"] {
+    color: var(--n2);
+}
+
+[data-n="3"] {
+    color: var(--n3);
+}
+
+[data-n="4"] {
+    color: var(--n4);
+}
+
+[data-n="5"] {
+    color: var(--n5);
+}
+
+[data-n="6"] {
+    color: var(--n6);
+}
+
+[data-n="7"] {
+    color: var(--n7);
+}
+
+[data-n="8"] {
+    color: var(--n8);
+}
