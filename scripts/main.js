@@ -32,7 +32,7 @@ function stopTimer() {
 }
 
 const states = {
-    init: (mine_count) =>  {
+    init: (mine_count) => {
         flag_val.textContent = mine_count;
     },
     start: () => {
@@ -90,3 +90,35 @@ restart_button.addEventListener('click', () => {
     game.reset();
 });
 
+const sound_button = document.getElementById("sound");
+const share_button = document.getElementById("share");
+
+share_button.addEventListener('click', () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Check this out!',
+            text: 'Here is something interesting',
+            url: window.location.href
+        });
+    } else {
+        alert("Sharing not supported on this browser");
+    }
+});
+
+const sound_image = document.getElementById("sound-image");
+
+let sound_on = true;
+
+sound_button.addEventListener('click', () => {
+    sound_on = !sound_on;
+    if (sound_on)
+        sound_image.src = "../icons/sound.svg";
+    else
+        sound_image.src = "../icons/mute.svg";
+});
+
+const difficulty_dropdown = document.getElementById("difficulty");
+
+difficulty_dropdown.addEventListener('change', (event) => {
+    
+});

@@ -17,11 +17,23 @@
 
 <body>
     <main>
-
-        <img src="icons/logo.avif">
-
-
         <div class="game-container">
+
+            <!--difficulty---->
+
+            <div class="actions">
+                <select name="difficulty" id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button class="icon-btn" id="sound"><img id="sound-image" src="icons/sound.svg"></button>
+                <button class="icon-btn" id="share"><img src="icons/share.svg"></button>
+                <img src="icons/logo.png">
+            </div>
+
+
 
 
             <!-- Top bar -->
@@ -31,15 +43,7 @@
 
                     <!-- Best -->
                     <div class="stat-chip" id="best">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                            <path d="M4 22h16" />
-                            <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                            <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                            <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-                        </svg>
+                        <img src="icons/trophy.svg">
                         <div>
                             <div class="stat-label">Best</div>
                             <div class="stat-value" id="best-val">—</div>
@@ -48,11 +52,7 @@
 
                     <!-- Time -->
                     <div class="stat-chip" id="time">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
+                        <img src="icons/clock.svg">
                         <div>
                             <div class="stat-label">Time</div>
                             <div class="stat-value" id="time-val">0</div>
@@ -61,11 +61,7 @@
 
                     <!-- Flags -->
                     <div class="stat-chip" id="flag">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-                            <line x1="4" x2="4" y1="22" y2="15" />
-                        </svg>
+                        <img src="icons/flag.svg">
                         <div>
                             <div class="stat-label">Flags</div>
                             <div class="stat-value" id="flag-val">10</div>
@@ -77,19 +73,10 @@
                 <!-- Buttons -->
                 <div class="actions">
                     <button class="icon-btn" id="redo" title="Restart">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-                            <path d="M3 3v5h5" />
-                        </svg>
+                        <img src="icons/redo.svg">
                     </button>
                     <button class="icon-btn" id="menu" title="Menu">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="4" x2="20" y1="6" y2="6" />
-                            <line x1="4" x2="20" y1="12" y2="12" />
-                            <line x1="4" x2="20" y1="18" y2="18" />
-                        </svg>
+                        <img src="icons/menu.svg">
                     </button>
                 </div>
 
@@ -198,9 +185,12 @@
 
                         <div class="page">
                             <h3>Game Tutorial</h3>
-                            <div><img src="icons/computer.svg">Computers and <img src="icons/phone.svg"> Phones can play this game</div>
-                            <div>To reveal squares <img src="icons/click.svg"> left click  or <img src="icons/tap.svg"> tap</div>
-                            <div><img src="icons/mouse.svg"> To mark squares right click or <img src="icons/hold.svg"> hold to flag potentially mines</div>
+                            <div><img src="icons/computer.svg">Computers and <img src="icons/phone.svg"> Phones can play
+                                this game</div>
+                            <div>To reveal squares <img src="icons/click.svg"> left click or <img src="icons/tap.svg">
+                                tap</div>
+                            <div><img src="icons/mouse.svg"> To mark squares right click or <img src="icons/hold.svg">
+                                hold to flag potentially mines</div>
                             <div><img src="icons/bomb.svg"> Beware of mines, do not accidently click on one or else you
                                 will lose</div>
                             <di><img src="icons/grid.svg"> To begin, left click or tap on any square on the grid.</di>
