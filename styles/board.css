@@ -22,6 +22,9 @@
 
     width: min(500px, 100%); /* ← was hardcoded 500px */
     background-color: gray;
+
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 body {
