@@ -175,13 +175,10 @@ body {
     position: absolute;
     background-color: transparent;
     border: none;
-    z-index: 0;
 }
 
 #sound {
     position: absolute;
     background-color: transparent;
     border: none;
-        z-index: 0;
-
 }
