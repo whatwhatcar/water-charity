@@ -90,7 +90,7 @@ restart_button.addEventListener('click', () => {
     game.reset();
 });
 
-const sound_button = document.getElementById("sound");
+const sound_button = document.getElementById("sound-button");
 const share_button = document.getElementById("share");
 
 share_button.addEventListener('click', () => {
@@ -105,20 +105,26 @@ share_button.addEventListener('click', () => {
     }
 });
 
-const sound_image = document.getElementById("sound-image");
+const sound = document.getElementById("sound");
+const mute = document.getElementById("mute");
+
 
 let sound_on = true;
 
 sound_button.addEventListener('click', () => {
     sound_on = !sound_on;
-    if (sound_on)
-        sound_image.src = "../icons/sound.svg";
-    else
-        sound_image.src = "../icons/mute.svg";
+    if (sound_on) {
+        sound.style.visibility = "visible";
+        mute.style.visibility = "hidden";
+    }
+    else {
+        sound.style.visibility = "hidden";
+        mute.style.visibility = "visible";
+    }
 });
 
 const difficulty_dropdown = document.getElementById("difficulty");
 
 difficulty_dropdown.addEventListener('change', (event) => {
-    
+
 });

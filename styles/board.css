@@ -20,7 +20,8 @@
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 
-    width: min(500px, 100%); /* ← was hardcoded 500px */
+    width: min(500px, 100%);
+    /* ← was hardcoded 500px */
     background-color: gray;
 
     user-select: none;
@@ -164,4 +165,23 @@ body {
 
 #difficulty {
     border-radius: 10px;
+}
+
+#sound-button {
+    position: relative;
+}
+
+#mute {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    z-index: 0;
+}
+
+#sound {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+        z-index: 0;
+
 }
