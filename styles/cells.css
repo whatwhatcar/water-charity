@@ -21,7 +21,7 @@
     align-items: center;
     font-weight: bold;
     font-family: monospace;
-    font-size: 2rem;
+    font-size: 2em;
 
     user-select: none;
     cursor: pointer;

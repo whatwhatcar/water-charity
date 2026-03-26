@@ -170,6 +170,7 @@ export function create({ width, height, mine_count, board_element, actions }) {
     }
 
     function left_click(event) {
+        actions.click();
         if (game_over) return;
         const cell = event.target;
         if (!cell.dataset.outer) return;
@@ -231,7 +232,6 @@ export function create({ width, height, mine_count, board_element, actions }) {
             board_element.removeEventListener("click", left_click);
             board_element.removeEventListener("contextmenu", on_contextmenu);
             board_element.replaceChildren();
-            board_element.remove();
         }
     };
 }

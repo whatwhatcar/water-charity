@@ -38,6 +38,9 @@ const states = {
     start: () => {
         startTimer();
     },
+    click: () => {
+        //sound click
+    },
     win: () => {
         stopTimer();
         const elapsed = Math.floor((Date.now() - startTime) / 1000);
@@ -65,19 +68,37 @@ const container = document.getElementById("board-container");
 const redo_button = document.getElementById("redo");
 const board = document.createElement("div");
 container.appendChild(board);
-const game = create({
-    width: 5,
-    height: 5,
-    mine_count: 3,
-    board_element: board,
-    actions: {
-        init: states.init,
-        start: states.start,
-        win: states.win,
-        lose: states.lose,
-        flag: states.flag
-    }
-});
+
+let game;
+
+const diff = {
+    easy: { width: 5, height: 5, mine_count: 3 },
+    medium: { width: 7, height: 7, mine_count: 7 },
+    hard: { width: 10, height: 10, mine_count: 20 }
+}
+
+function start_game(mode) {
+    stopTimer();
+    if (game)
+        game.destroy();
+
+    let settings;
+    settings = diff[mode];
+
+    game = create({
+        ...settings,
+        board_element: board,
+        actions: {
+            init: states.init,
+            start: states.start,
+            click: states.click,
+            win: states.win,
+            lose: states.lose,
+            flag: states.flag
+        }
+    });
+}
+
 redo_button.addEventListener('click', () => {
     stopTimer();
     time_val.textContent = "0s";
@@ -126,5 +147,8 @@ sound_button.addEventListener('click', () => {
 const difficulty_dropdown = document.getElementById("difficulty");
 
 difficulty_dropdown.addEventListener('change', (event) => {
-
+    const mode = event.target.value;
+    start_game(mode);
 });
+
+start_game("easy");
