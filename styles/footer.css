@@ -1,3 +1,17 @@
 footer {
     display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    height: 25px;
+}
+
+.social-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.social-item {
+    list-style: none;
 }

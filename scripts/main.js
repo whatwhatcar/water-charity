@@ -31,10 +31,6 @@ function stopTimer() {
     timer = null;
 }
 
-const yippee = new Audio("../sounds/yippee.mp3");
-const faaah = new Audio("../sounds/faaah.mp3");
-const click_sound = new Audio("../sounds/mouse-click-sound.mp3");
-
 const states = {
     init: (mine_count) => {
         flag_val.textContent = mine_count;
@@ -43,7 +39,7 @@ const states = {
         startTimer();
     },
     click: () => {
-        if (sound_on) { click_sound.play(); }
+        if (sound_on) { const click_sound = new Audio("../sounds/clicksoundeffect.mp3"); click_sound.play(); }
     },
     win: () => {
         stopTimer();
@@ -57,7 +53,8 @@ const states = {
         end_screen.style.display = "flex";
         end_message.textContent = "you win!";
         confetti();
-        if (sound_on) { yippee.play(); }
+        
+        if (sound_on) { const yippee = new Audio("../sounds/yippee.mp3");  yippee.play(); }
     },
     lose: () => {
         stopTimer();
@@ -65,7 +62,7 @@ const states = {
         your_time.textContent = "your time: " + elapsed + "s";       // ← add this
         end_screen.style.display = "flex";
         end_message.textContent = "you lose!";
-        if (sound_on) { faaah.play(); }
+        if (sound_on) { const faaah = new Audio("../sounds/faaah.mp3"); faaah.play(); }
 
     },
     flag: (mine_count) => { flag_val.textContent = mine_count; }
