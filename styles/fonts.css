@@ -1,0 +1,17 @@
+:root {
+    --proxy: 'MyCustomFontName', Arial, sans-serif;
+}
+
+@font-face {
+    font-family: 'MyCustomFontName';
+    /* Choose a name for your font */
+    src: url('../fonts/Proxima Nova/Proxima\ Nova\ Semibold//Proxima Nova Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Optional: helps prevent render-blocking */
+}
+
+div {
+    font-family: var(--proxy);
+}
