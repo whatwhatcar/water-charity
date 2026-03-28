@@ -11,9 +11,9 @@ const your_time = document.getElementById("your-time");
 
 const milestone_message = document.getElementById("milestone-message");
 
-const yippee = new Audio("../sounds/yippee.mp3");
-const faaah = new Audio("../sounds/faaah.mp3");
-const click_sound = new Audio("../sounds/clicksoundeffect.mp3");
+const yippee = document.getElementById("yippee");
+const faaah = document.getElementById("faaah");
+const click_sound = document.getElementById("click-sound");
 
 best_time.textContent = "best time: -";
 your_time.textContent = "your time: -";
