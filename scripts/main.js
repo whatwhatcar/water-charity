@@ -47,7 +47,7 @@ const states = {
         const ratio = reveal_count / total_cells;
         if (ratio < 0.2) { milestone_message.textContent = "believe in yourself!"; return; }
         if (ratio > 0.7) { milestone_message.textContent = "you're almost there!"; return; }
-        milestone_message.textContent = "we're half way there ooh!";
+        milestone_message.textContent = "woah, we're half way there!";
     },
     win: () => {
         stopTimer();
