@@ -11,6 +11,10 @@ const your_time = document.getElementById("your-time");
 
 const milestone_message = document.getElementById("milestone-message");
 
+const yippee = new Audio("../sounds/yippee.mp3");
+const faaah = new Audio("../sounds/faaah.mp3");
+const click_sound = new Audio("../sounds/clicksoundeffect.mp3");
+
 best_time.textContent = "best time: -";
 your_time.textContent = "your time: -";
 
@@ -41,7 +45,7 @@ const states = {
         startTimer();
     },
     click: () => {
-        if (sound_on) { const click_sound = new Audio("../sounds/clicksoundeffect.mp3"); click_sound.play(); }
+        if (sound_on) {  click_sound.play(); }
     },
     score: (reveal_count, total_cells) => {
         const ratio = reveal_count / total_cells;
@@ -62,7 +66,7 @@ const states = {
         end_message.textContent = "you win!";
         confetti();
 
-        if (sound_on) { const yippee = new Audio("../sounds/yippee.mp3"); yippee.play(); }
+        if (sound_on) {  yippee.play(); }
     },
     lose: () => {
         stopTimer();
@@ -70,7 +74,7 @@ const states = {
         your_time.textContent = "your time: " + elapsed + "s";       // ← add this
         end_screen.style.display = "flex";
         end_message.textContent = "you lose!";
-        if (sound_on) { const faaah = new Audio("../sounds/faaah.mp3"); faaah.play(); }
+        if (sound_on) {  faaah.play(); }
 
     },
     flag: (mine_count) => { flag_val.textContent = mine_count; }
