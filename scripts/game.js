@@ -178,6 +178,7 @@ export function create({ width, height, mine_count, board_element, actions }) {
         if (visit[outer]) return; //if visited if flagged
         if (check_lose(outer)) return;
         reveal(get_inner(outer), outer);
+        actions.score(reveal_count, total_cells);
     }
 
     function right_click(event) {

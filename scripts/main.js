@@ -9,9 +9,10 @@ const flag_val = document.getElementById("flag-val");
 const best_time = document.getElementById("best-time");
 const your_time = document.getElementById("your-time");
 
+const milestone_message = document.getElementById("milestone-message");
+
 best_time.textContent = "best time: -";
 your_time.textContent = "your time: -";
-
 
 let best = null;
 best_val.textContent = "-";
@@ -33,6 +34,7 @@ function stopTimer() {
 
 const states = {
     init: (mine_count) => {
+        milestone_message.textContent = "click board to start";
         flag_val.textContent = mine_count;
     },
     start: () => {
@@ -40,6 +42,12 @@ const states = {
     },
     click: () => {
         if (sound_on) { const click_sound = new Audio("../sounds/clicksoundeffect.mp3"); click_sound.play(); }
+    },
+    score: (reveal_count, total_cells) => {
+        const ratio = reveal_count / total_cells;
+        if (ratio < 0.2) { milestone_message.textContent = "believe in yourself!"; return; }
+        if (ratio > 0.7) { milestone_message.textContent = "you're almost there!"; return; }
+        milestone_message.textContent = "we're half way there ooh!";
     },
     win: () => {
         stopTimer();
@@ -53,8 +61,8 @@ const states = {
         end_screen.style.display = "flex";
         end_message.textContent = "you win!";
         confetti();
-        
-        if (sound_on) { const yippee = new Audio("../sounds/yippee.mp3");  yippee.play(); }
+
+        if (sound_on) { const yippee = new Audio("../sounds/yippee.mp3"); yippee.play(); }
     },
     lose: () => {
         stopTimer();
@@ -95,6 +103,7 @@ function start_game(mode) {
         actions: {
             init: states.init,
             start: states.start,
+            score: states.score,
             click: states.click,
             win: states.win,
             lose: states.lose,
